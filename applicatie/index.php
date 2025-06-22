@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
+
+    <title>Pizzeria Sole Machina</title>
+    <link rel="normalize" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+
+
 </head>
+
 <body>
-    <h1>It Works!</h1>
-    <?php echo('Hallo WT\'er, de webserver is online en PHP werkt.'); ?>
-    <br>
-    <br>
-    Alle technische informatie over je webserver vind je hier: <a href="phpinfo.php">http://<?=$_SERVER['HTTP_HOST']?>/phpinfo.php</a>
-    <br>
-    <br>
-    Een voorbeeld van een pagina die gegevens uit de database haalt vind je hier: <a href="componist-aantalstukken.php">http://<?=$_SERVER['HTTP_HOST']?>/componist-aantalstukken.php</a>
+    <?php include 'header.php'; ?>
+
+    <main>
+        <h1>Pizza's</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/margherita.png" alt="Pizza Margherita" class="box-image">
+                <p>Pizza Margherita</p>
+                <p>€5.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/pepperoni.png" alt="Pepperoni Pizza" class="box-image">
+                <p>Pepperoni Pizza</p>
+                <p>€11.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/hawaii.png" alt="Pizza Hawaii" class="box-image">
+                <p>Pizza Hawaii</p>
+                <p>€9.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/salami.png" alt="Pizza Salami" class="box-image">
+                <p>Pizza Salami</p>
+                <p>€8.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/funghi.png" alt="Pizza Funghi" class="box-image">
+                <p>Pizza Funghi</p>
+                <p>€10.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+        </div>
+
+        <h1>Dranken</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/cola.png" alt="Coca-Cola" class="box-image">
+                <p>Coca-Cola</p>
+                <p>€2.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/fanta.png" alt="Fanta" class="box-image">
+                <p>Fanta</p>
+                <p>€2.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+            <div class="box">
+                <img src="images/sprite.png" alt="Sprite" class="box-image">
+                <p>Sprite</p>
+                <p>€2.99</p>
+                <button class="voeg-toe">+</button>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Pizzeria Sole Machina. Alle rechten voorbehouden.</p>
+
+    </footer>
+
+
+
+
+
 </body>
+
 </html>

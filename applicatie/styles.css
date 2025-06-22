@@ -1,0 +1,287 @@
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+
+
+
+}
+
+pre {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-wrap: balance;
+
+}
+
+h1,
+h2,
+form,
+.actieve-bestelling {
+    text-align: center;
+
+}
+
+footer {
+
+    text-align: center;
+    font-size: 0.75rem;
+
+
+}
+
+/* header */
+.Titel {
+    font-size: 1.5rem;
+    margin-left: 1vw;
+    margin-top: 0.5vw;
+    color: white;
+}
+
+nav {
+    height: 5rem;
+
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgb(230, 130, 167);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+
+
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    margin: 10px;
+
+
+}
+
+nav a:hover {
+    border: 2px solid #ffc8fb;
+    border-radius: 5px;
+    background-color: #ffc8fb;
+
+}
+
+/* boxen menu en winkelmandje */
+.box {
+    height: 220px;
+    width: 200px;
+    background-color: rgb(230, 130, 167);
+    border: 2px solid;
+    border-radius: 5px;
+
+    position: relative;
+    padding: 10px;
+
+
+
+
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.box img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: contain;
+
+
+}
+
+.voeg-toe {
+
+
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+
+}
+
+/* winkelwagen */
+
+.hoeveelheid {
+
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+.hoeveelheid button {
+    cursor: pointer;
+    padding: 4px;
+    width: 25px;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hoeveelheid button:hover {
+
+    background-color: rgb(255, 193, 250);
+
+}
+
+.totaalmenu {
+
+    gap: 20px;
+    padding: 4px;
+    background-color: rgb(214, 196, 203);
+    border-radius: 4px;
+    border: 2px solid;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+
+}
+
+.button-link {
+    cursor: pointer;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.button-link a {
+    color: #5f6d7c;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.button-link:hover {
+
+    background-color: rgb(249, 215, 245);
+}
+
+
+
+/* login paginas */
+
+
+
+label {
+
+    font-size: 1rem;
+    color: #333333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+input[type="submit"] {
+
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #9b6b6b;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #fecef8;
+    cursor: pointer;
+}
+
+
+.login-links {
+
+    background-color: #fff0f6;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-links a {
+    color: #5f6d7c;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+}
+
+.login-links a:hover {
+
+    background-color: #fae7f9;
+    border-color: #5f6d7c;
+}
+
+/* medewerker overzicht */
+
+.overzicht {
+    display: grid;
+    gap: 10px;
+    position: relative;
+
+}
+
+.overzichtboxje {
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid;
+
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
