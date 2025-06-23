@@ -7,7 +7,7 @@
         initial-scale=1.0">
 
     <title>Account</title>
-    <link rel="normalize" href="normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
 
 </head>

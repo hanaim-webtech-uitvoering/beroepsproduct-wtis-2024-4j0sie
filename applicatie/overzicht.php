@@ -7,7 +7,7 @@
         initial-scale=1.0">
 
     <title>Pizzeria Sole Machina</title>
-    <link rel="normalize" href="normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
 
 </head>
