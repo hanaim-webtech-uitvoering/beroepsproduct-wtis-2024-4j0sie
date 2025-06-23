@@ -285,3 +285,18 @@ select {
     cursor: pointer;
 
 }
+
+.error-message {
+    background-color: #fdd;
+    color: red;
+    padding: 10px;
+    border: 1px solid #e99;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
