@@ -31,9 +31,8 @@
                 <label for="nummer">telefoon *</label><br>
                 <input type="number" id="nummer" name="nummer" placeholder="06 12345678" required><br><br>
 
-                <label for="straat">Straatnaam en nummer *</label><br>
-                <input type="text" id="straat" name="straat" placeholder="Voer hier je straat in" required>
-                <input type="number" id="huisnr" name="huisnr" placeholder="Straatnummer" required><br><br>
+                <label for="adres">Adres *</label><br>
+                <input type="text" id="adres" name="adres" placeholder="Voer hier je straat in" required><br><br>
 
                 <label for="postcode">Postcode *</label><br>
                 <input type="text" id="postcode" name="postcode" placeholder="1234 AB" required><br><br>

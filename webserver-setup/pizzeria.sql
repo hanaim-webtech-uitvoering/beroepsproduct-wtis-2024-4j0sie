@@ -29,6 +29,8 @@ CREATE TABLE [User] (
   [last_name] NVARCHAR(255) NOT NULL,
   [address] NVARCHAR(255),
   [role] NVARCHAR(50) NOT NULL
+  [postcode] VARCHAR(7),
+  [city] VARCHAR(50)
 );
 
 -- Create ProductType table
