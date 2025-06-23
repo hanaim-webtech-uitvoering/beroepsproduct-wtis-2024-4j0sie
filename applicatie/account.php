@@ -1,3 +1,8 @@
+<?php
+require_once 'functies/data_functies.php';
+require_once 'functies/db_connectie.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +18,8 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
 
+    <?php include 'header.php'; ?>
     <main>
         <h1>Mijn Account</h1>
         <div class="actieve-bestelling">

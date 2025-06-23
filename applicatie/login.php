@@ -1,3 +1,4 @@
+<?php require_once 'functies/data_functies.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +16,21 @@
 
 <body>
     <?php include 'header.php'; ?>
-
     <main>
-
         <h1>Inloggen</h1>
-
-        <form action="account.php">
+        <form method="POST" action="account.php">
             <label for="username">Gebruikersnaam *</label><br>
-            <input type="text" id="username" name="username" placeholder="Voer hier je gebruikersnaam in"
-                required><br><br>
+            <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required><br><br>
 
-            <label for="password">Wachtwoord</label><br>
-            <input type="password" id="password" name="password" placeholder="Voer je wachtwoord in" required><br><br>
+            <label for="password">Wachtwoord *</label><br>
+            <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in" required><br><br>
 
             <input type="submit" value="Inloggen"><br><br>
 
         </form>
 
         <div class="login-links">
-            <a href="registratie.php">Account aanmaken</a><br><br>
+            <a href="registratie.php">Nog geen account? Maak hier een account aan</a><br><br>
         </div>
 
     </main>

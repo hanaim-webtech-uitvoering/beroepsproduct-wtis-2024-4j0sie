@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'functies/db_connectie.php';
 require_once 'functies/data_functies.php';
 
