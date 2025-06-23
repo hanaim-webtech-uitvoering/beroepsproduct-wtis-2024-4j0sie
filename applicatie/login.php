@@ -8,7 +8,7 @@
 
     <title>Pizzeria Sole Machina</title>
 
-    <link rel="normalize" href="normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -21,8 +21,9 @@
         <h1>Inloggen</h1>
 
         <form action="account.php">
-            <label for="email">E-mailadres</label><br>
-            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required><br><br>
+            <label for="username">Gebruikersnaam *</label><br>
+            <input type="text" id="username" name="username" placeholder="Voer hier je gebruikersnaam in"
+                required><br><br>
 
             <label for="password">Wachtwoord</label><br>
             <input type="password" id="password" name="password" placeholder="Voer je wachtwoord in" required><br><br>
