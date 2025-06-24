@@ -12,31 +12,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username']);
     $wachtwoord = $_POST['password'];
 
-    // Error melding moet ff mooier
     if (empty($username) || empty($wachtwoord)) {
         $foutmelding = "Vul alle verplichte velden in.";
-        exit;
-    }
-
-    $db = maakVerbinding();
-    $user = getUserInfo($username);
-
-    if (!$user || !password_verify($wachtwoord, $user['password'])) {
-        $foutmelding = "Ongeldige gebruikersnaam of wachtwoord.";
+    } else if (strlen($username) < 4 || strlen($username) > 20) {
+        $foutmelding = "Gebruikersnaam moet tussen de 4 en 20 tekens zijn.";
+    } else if (strlen($wachtwoord) < 8) {
+        $foutmelding = "Wachtwoord moet minimaal 8 tekens zijn.";
     } else {
-        $_SESSION['user'] = [
-            'username' => $user['username'],
-            'voornaam' => $user['first_name'],
-            'achternaam' => $user['last_name'],
-            'adres' => $user['address'],
-            'rol' => $user['role'],
-            'postcode' => $user['postcode'],
-            'stad' => $user['city']
-        ];
 
-        header('Location: index.php');
-        exit;
+        $db = maakVerbinding();
+        $user = getUserInfo($username);
+
+        if (!$user || !password_verify($wachtwoord, $user['password'])) {
+            $foutmelding = "Ongeldige gebruikersnaam of wachtwoord.";
+        } else {
+            $_SESSION['user'] = [
+                'username' => $user['username'],
+                'voornaam' => $user['first_name'],
+                'achternaam' => $user['last_name'],
+                'adres' => $user['address'],
+                'rol' => $user['role'],
+                'postcode' => $user['postcode'],
+                'stad' => $user['city']
+            ];
+
+            header('Location: index.php');
+            exit;
+        }
     }
+
 }
 ?>
 <!DOCTYPE html>
@@ -60,10 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Inloggen</h1>
         <form method="POST" action="login.php">
             <label for="username">Gebruikersnaam *</label><br>
-            <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required><br><br>
+            <input type="text" id="username" name="username" minlenght="4" maxlength="20"
+                placeholder="Voer uw gebruikersnaam in" required><br><br>
 
             <label for="password">Wachtwoord *</label><br>
-            <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in" required><br><br>
+            <input type="password" id="password" name="password" minlength="8" placeholder="Voer uw wachtwoord in"
+                required><br><br>
 
             <?php if (!empty($foutmelding)) { ?>
                 <div class="error-message">

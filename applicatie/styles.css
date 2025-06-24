@@ -1,7 +1,7 @@
 body {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 5px;
+    margin: 0;
     padding: 0;
     min-height: 100vh;
     position: relative;
@@ -62,18 +62,18 @@ nav a {
     color: rgb(255, 255, 255);
     font-size: 1rem;
     text-decoration: none;
-
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
     margin: 10px;
 
-
 }
 
 nav a:hover {
-    border: 2px solid #ffc8fb;
-    border-radius: 5px;
-    background-color: #ffc8fb;
+    border-color: rgb(243, 214, 224);
+    background-color: rgb(248, 171, 199);
 
 }
 
