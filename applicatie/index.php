@@ -1,5 +1,18 @@
 <?php require_once 'functies/data_functies.php';
+if (!isset($_SESSION['winkelwagen'])) {
+    $_SESSION['winkelwagen'] = [];
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product'])) {
+    $product = trim($_POST['product']);
 
+    if (!isset($_SESSION['winkelwagen'][$product])) {
+        $_SESSION['winkelwagen'][$product] = 1;
+    } else {
+        $_SESSION['winkelwagen'][$product]++;
+    }
+    header('Location: index.php');
+    exit;
+}
 $menu = getMenu();
 
 ?>
@@ -27,6 +40,16 @@ $menu = getMenu();
             <div class="box-container">
                 <?php foreach ($producten as $productNaam => $productInfo) { ?>
                     <div class="box">
+                        <div class="aantal">
+                            <p>In winkelwagen: <?php if (isset($_SESSION['winkelwagen'][$productNaam])) {
+                                echo htmlspecialchars($_SESSION['winkelwagen'][$productNaam]);
+                            } else {
+                                echo '0';
+                            } ?>
+
+                            </p>
+
+                        </div>
                         <img src="images/<?php echo $productNaam; ?>.png" alt="<?php echo htmlspecialchars($productNaam); ?>"
                             class="box-image">
                         <p style="font-weight:bold;"><?php echo htmlspecialchars($productNaam); ?></p>
@@ -38,7 +61,13 @@ $menu = getMenu();
                             } ?>
                         </p>
                         <p>€<?php echo htmlspecialchars($productInfo['price']); ?></p>
-                        <button class="voeg-toe">+</button>
+                        <div class="toevoegen">
+                            <form method="POST">
+                                <input type="hidden" name="product" value="<?php echo htmlspecialchars($productNaam); ?>" />
+                                <button type="submit">Toevoegen</button>
+                            </form>
+                        </div>
+
                     </div>
                 <?php } ?>
             </div>
