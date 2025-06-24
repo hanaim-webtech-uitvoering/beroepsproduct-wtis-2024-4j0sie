@@ -29,6 +29,7 @@
             <div class="box">
                 <img src="images/pepperoni.png" alt="Pepperoni Pizza" class="box-image">
                 <p>Pepperoni Pizza</p>
+                <p class="ingredienten">Ingrediënten: Tomaat, Mozzarella, Basilicum</p>
                 <p>€11.99</p>
                 <button class="voeg-toe">+</button>
             </div>

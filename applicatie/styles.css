@@ -79,12 +79,11 @@ nav a:hover {
 
 /* boxen menu en winkelmandje */
 .box {
-    height: 220px;
-    width: 200px;
+
+    width: 220px;
     background-color: rgb(230, 130, 167);
     border: 2px solid;
     border-radius: 5px;
-
     position: relative;
     padding: 10px;
 
@@ -107,6 +106,11 @@ nav a:hover {
     object-fit: contain;
 
 
+}
+
+.ingredienten {
+    font-size: 0.95em;
+    margin: 5px 0;
 }
 
 .voeg-toe {
