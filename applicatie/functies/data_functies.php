@@ -1,4 +1,5 @@
 <?php
+require_once 'functies/db_connectie.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
