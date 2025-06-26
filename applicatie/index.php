@@ -4,12 +4,7 @@ if (!isset($_SESSION['winkelwagen'])) {
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product'])) {
     $product = trim($_POST['product']);
-
-    if (!isset($_SESSION['winkelwagen'][$product])) {
-        $_SESSION['winkelwagen'][$product] = 1;
-    } else {
-        $_SESSION['winkelwagen'][$product]++;
-    }
+    addToCart($product);
     header('Location: index.php');
     exit;
 }
@@ -46,9 +41,7 @@ $menu = getMenu();
                             } else {
                                 echo '0';
                             } ?>
-
                             </p>
-
                         </div>
                         <img src="images/<?php echo $productNaam; ?>.png" alt="<?php echo htmlspecialchars($productNaam); ?>"
                             class="box-image">

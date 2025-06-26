@@ -57,6 +57,40 @@ function getMenu()
     return $menu;
 }
 
+function addToCart($product)
+{
+    if (!isset($_SESSION['winkelwagen'])) {
+        $_SESSION['winkelwagen'] = [];
+    }
+    if (!isset($_SESSION['winkelwagen'][$product])) {
+        $_SESSION['winkelwagen'][$product] = 1;
+    } else {
+        $_SESSION['winkelwagen'][$product]++;
+    }
+}
 
+function removeFromCart($product)
+{
+    if (isset($_SESSION['winkelwagen'][$product])) {
+        $_SESSION['winkelwagen'][$product]--;
+        if ($_SESSION['winkelwagen'][$product] <= 0) {
+            unset($_SESSION['winkelwagen'][$product]);
+        }
+    }
+}
 
+function getTotalPrice($menu)
+{
+    $totaal = 0;
+    foreach ($_SESSION['winkelwagen'] as $productNaam => $aantal) {
+        foreach ($menu as $categorie => $producten) {
+            if (isset($producten[$productNaam])) {
+                $prijs = $producten[$productNaam]['price'];
+                $totaal += $prijs * $aantal;
+
+            }
+        }
+    }
+    return $totaal;
+}
 ?>

@@ -86,7 +86,7 @@ nav a:hover {
     border-radius: 5px;
     position: relative;
     padding: 10px;
-    margin-left: 5px;
+
 
 }
 
@@ -94,7 +94,7 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-
+    justify-content: center;
 }
 
 .box img {
@@ -118,6 +118,8 @@ nav a:hover {
     cursor: pointer;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+
 }
 
 .toevoegen button {
@@ -127,6 +129,7 @@ nav a:hover {
     background-color: rgb(255, 194, 217);
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 5px;
 }
 
 .toevoegen button:hover {
