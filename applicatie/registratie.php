@@ -1,4 +1,4 @@
-<?php require_once 'functies/db_connectie.php';
+<?php
 require_once 'functies/data_functies.php';
 
 
@@ -106,27 +106,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form method="POST" action="registratie.php">
                 <label for="vnaam">Voornaam *</label><br>
                 <input type="text" id="vnaam" name="vnaam" maxlength="50" placeholder="Voer hier uw voornaam in"
-                    required><br><br>
+                    required pattern="[a-zA-Z\s\-']+"><br><br>
 
                 <label for="anaam">Achternaam *</label><br>
                 <input type="text" id="anaam" name="anaam" maxlength="50" placeholder="Inclusief tussenvoegsels"
-                    required><br><br>
+                    required pattern="[a-zA-Z\s\-']+"><br><br>
 
                 <label for="username">Gebruikersnaam *</label><br>
                 <input type="text" id="username" name="username" minlength="4" maxlength="20" placeholder="JaneDoe123"
-                    required><br><br>
+                    required pattern="[a-zA-Z0-9_]+"><br><br>
 
                 <label for="adres">Adres *</label><br>
-                <input type="text" id="adres" name="adres" maxlength="50" placeholder="Voer hier uw adres in"
-                    required><br><br>
+                <input type="text" id="adres" name="adres" maxlength="50" placeholder="Voer hier uw adres in" required
+                    pattern="[a-zA-Z0-9\s\-\.']+"><br><br>
 
                 <label for="postcode">Postcode *</label><br>
-                <input type="text" id="postcode" name="postcode" pattern="^[0-9]{4}\s?[A-Za-z]{2}$" maxlength="7"
-                    placeholder="1234 AB" required><br><br>
+                <input type="text" id="postcode" name="postcode" maxlength="7" placeholder="1234 AB" required
+                    pattern="[0-9]{4}\s?[A-Za-z]{2}"><br><br>
 
                 <label for="stad">Stad *</label><br>
-                <input type="text" id="stad" name="stad" maxlength="50" placeholder="Vul hier uw stad in"
-                    required><br><br>
+                <input type="text" id="stad" name="stad" maxlength="50" placeholder="Vul hier uw stad in" required
+                    pattern="[a-zA-Z\s\-']+"><br><br>
 
                 <label for="password">Wachtwoord *</label><br>
                 <input type="password" id="password" name="password" minlength="8" placeholder="Min. 8 karakters"

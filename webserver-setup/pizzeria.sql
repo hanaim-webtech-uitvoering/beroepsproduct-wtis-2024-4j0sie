@@ -28,7 +28,7 @@ CREATE TABLE [User] (
   [first_name] NVARCHAR(255) NOT NULL,
   [last_name] NVARCHAR(255) NOT NULL,
   [address] NVARCHAR(255),
-  [role] NVARCHAR(50) NOT NULL
+  [role] NVARCHAR(50) NOT NULL,
   [postcode] VARCHAR(7),
   [city] VARCHAR(50)
 );
@@ -64,8 +64,10 @@ CREATE TABLE [Pizza_Order] (
   [personnel_username] NVARCHAR(255) NOT NULL,
   [datetime] DATETIME NOT NULL,
   [status] INT,
-  [address] NVARCHAR(255)
-)
+  [address] NVARCHAR(255),
+  [postcode] VARCHAR(7), 
+  [city] VARCHAR(50)
+);
 
 -- Create Pizza_Order_Product table
 CREATE TABLE [Pizza_Order_Product] (
@@ -151,10 +153,17 @@ INSERT INTO Product ([name], price, type_id) VALUES
 ('Pepperoni Pizza', 11.99, 'Pizza'),
 ('Vegetarische Pizza', 10.99, 'Pizza'),
 ('Hawaiian Pizza', 12.99, 'Pizza'),
+('Mozzarella Pizza', 10.99, 'Pizza'),
 ('Combinatiemaaltijd', 15.99, 'Maaltijd'),
+('Lasagne', 10.00, 'Maaltijd'),
+('Spaghetti Bolognese', 6.00, 'Maaltijd'), 
 ('Knoflookbrood', 4.99, 'Voorgerecht'),
+('Komkommer salade', 6.00, 'Voorgerecht'),
+('Bruschetta', 5.50, 'Voorgerecht'), 
 ('Coca Cola', 2.49, 'Drank'),
-('Sprite', 2.49, 'Drank');
+('Sprite', 2.49, 'Drank'),
+('Fanta', 2.49, 'Drank'),
+('Redbull', 4.49, 'Drank');
 
 -- Insert statements for product-ingredient relationships
 INSERT INTO Product_Ingredient (product_name, ingredient_name) VALUES
@@ -173,7 +182,9 @@ INSERT INTO Product_Ingredient (product_name, ingredient_name) VALUES
 ('Hawaiian Pizza', 'Ui'), -- Hawaiian Pizza met Ui
 ('Hawaiian Pizza', 'Sla'), -- Hawaiian Pizza met Sla
 ('Hawaiian Pizza', 'Spek'), -- Hawaiian Pizza met Spek
-('Hawaiian Pizza', 'Saus'), -- Hawaiian Pizza met Saus
+('Hawaiian Pizza', 'Saus'),  -- Hawaiian Pizza met Saus
+('Mozzarella Pizza', 'Saus'),
+('Mozzarella Pizza', 'Kaas'),
 ('Combinatiemaaltijd', 'Tomaat'), -- Combinatiemaaltijd met Tomaat
 ('Combinatiemaaltijd', 'Kaas'), -- Combinatiemaaltijd met Kaas
 ('Combinatiemaaltijd', 'Pepperoni'), -- Combinatiemaaltijd met Pepperoni
@@ -182,6 +193,18 @@ INSERT INTO Product_Ingredient (product_name, ingredient_name) VALUES
 ('Combinatiemaaltijd', 'Sla'), -- Combinatiemaaltijd met Sla
 ('Combinatiemaaltijd', 'Spek'), -- Combinatiemaaltijd met Spek
 ('Combinatiemaaltijd', 'Saus'); -- Combinatiemaaltijd met Saus
+('Lasagne', 'Tomaat'),
+('Lasagne', 'Kaas'),
+('Lasagne', 'Saus'),
+('Lasagne', 'Ui'),
+('Spaghetti Bolognese', 'Tomaat'),
+('Spaghetti Bolognese', 'Saus'),
+('Spaghetti Bolognese', 'Ui'),
+('Knoflookbrood', 'Kaas'),
+('Knoflookbrood', 'Saus'),
+('Bruschetta', 'Tomaat'),
+('Bruschetta', 'Kaas'),
+('Bruschetta', 'Saus');
 
 -- Insert statements for pizza orders
 INSERT INTO [Pizza_Order] (client_username, client_name, personnel_username, datetime, status, address) VALUES

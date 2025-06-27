@@ -26,6 +26,21 @@ form,
 
 }
 
+.bestelling {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
 footer {
 
     text-align: center;
@@ -209,13 +224,14 @@ input[type="number"] {
 
 input[type="submit"] {
 
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #9b6b6b;
+    background-color: #e682a7;
+    color: #fff;
+    border: none;
     border-radius: 10px;
-    box-sizing: border-box;
-    background-color: #fecef8;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -253,19 +269,6 @@ input[type="submit"] {
 
 /* medewerker overzicht */
 
-.overzicht {
-    display: grid;
-    gap: 10px;
-    position: relative;
-
-}
-
-.overzichtboxje {
-    text-align: center;
-    border-radius: 5px;
-    border: 2px solid;
-
-}
 
 select {
     padding: 10px;
@@ -289,4 +292,68 @@ select {
     width: 30%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.bestelling-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.status-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-knop {
+    background-color: #e682a7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.status-knop:hover {
+    background-color: #fae7f9;
+    color: #e682a7;
+}
+
+.details-form {
+    margin-top: auto;
+    text-align: center;
+}
+
+.details-knop {
+    background-color: #e682a7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.details-knop:hover {
+    background-color: #fae7f9;
+    color: #e682a7;
+}
+
+.lege-winkelwagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
 }

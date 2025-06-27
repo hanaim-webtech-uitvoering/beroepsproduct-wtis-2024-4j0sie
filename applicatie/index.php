@@ -1,4 +1,9 @@
 <?php require_once 'functies/data_functies.php';
+if (isset($_SESSION['user']) && $_SESSION['user']['rol'] === 'Personnel') {
+    header('Location: overzicht.php');
+    exit;
+}
+
 if (!isset($_SESSION['winkelwagen'])) {
     $_SESSION['winkelwagen'] = [];
 }
@@ -43,8 +48,8 @@ $menu = getMenu();
                             } ?>
                             </p>
                         </div>
-                        <img src="images/<?php echo $productNaam; ?>.png" alt="<?php echo htmlspecialchars($productNaam); ?>"
-                            class="box-image">
+                        <img src="images/<?php echo rawurlencode($productNaam); ?>.png"
+                            alt="<?php echo htmlspecialchars($productNaam); ?>" class="box-image">
                         <p style="font-weight:bold;"><?php echo htmlspecialchars($productNaam); ?></p>
                         <p class="ingredienten">Ingrediënten:
                             <?php if (empty(implode(', ', $productInfo['ingredients']))) {

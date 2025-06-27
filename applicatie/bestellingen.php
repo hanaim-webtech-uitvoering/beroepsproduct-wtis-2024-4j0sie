@@ -1,4 +1,9 @@
 <?php require_once 'functies/data_functies.php';
+if (isset($_SESSION['user']) && $_SESSION['user']['rol'] === 'Personnel') {
+    header('Location: overzicht.php');
+    exit;
+}
+
 if (!isset($_SESSION['winkelwagen'])) {
     $_SESSION['winkelwagen'] = [];
 }
@@ -39,7 +44,10 @@ $menu = getMenu();
         <h2>In mijn winkelwagen:</h2>
 
         <?php if (empty($_SESSION['winkelwagen'])) { ?>
-            <h1> Uw winkelwagen is leeg </h1>
+            <div class="lege-winkelwagen">
+                <p>Uw winkelwagen is leeg.</p>
+                <a href="index.php" class="details-knop">Terug naar menu</a>
+            </div>
         <?php } else { ?>
             <div class="box-container">
                 <?php
@@ -57,7 +65,7 @@ $menu = getMenu();
                                     } ?>
                                     </p>
                                 </div>
-                                <img src="images/<?php echo htmlspecialchars($productNaam); ?>.png"
+                                <img src="images/<?php echo rawurlencode($productNaam); ?>.png"
                                     alt="<?php echo htmlspecialchars($productNaam); ?>" class="box-image">
                                 <p style="font-weight:bold;"><?php echo htmlspecialchars($productNaam); ?></p>
                                 <p class="ingredienten">Ingrediënten:
@@ -70,13 +78,14 @@ $menu = getMenu();
                                 <p>€<?php echo htmlspecialchars($productInfo['price']); ?></p>
                                 <div class="toevoegen">
                                     <form method="POST">
-                                        <input type="hidden" name="product" value="<?php echo htmlspecialchars($productNaam); ?>" />
-                                        <button type="submit">Toevoegen</button>
-                                    </form>
-                                    <form method="POST">
                                         <input type="hidden" name="verwijder" value="<?php echo htmlspecialchars($productNaam); ?>" />
                                         <button type="submit">Verwijderen</button>
                                     </form>
+                                    <form method="POST">
+                                        <input type="hidden" name="product" value="<?php echo htmlspecialchars($productNaam); ?>" />
+                                        <button type="submit">Toevoegen</button>
+                                    </form>
+
                                 </div>
                             </div>
                             <?php
@@ -99,7 +108,7 @@ $menu = getMenu();
                     <a href="index.php">Verder winkelen</a>
                 </div>
                 <div class="button-link">
-                    <a href="betaling.php">Afrekenen</a>
+                    <a href="betaling.php">Bestelling plaatsen</a>
                 </div>
             </div>
         <?php } ?>

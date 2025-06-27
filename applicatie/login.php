@@ -36,8 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'stad' => $user['city']
             ];
 
-            header('Location: index.php');
-            exit;
+            if ($user['role'] == 'Personnel') {
+                header('Location: overzicht.php');
+            } else {
+                header('Location: index.php');
+            }
+
         }
     }
 
@@ -64,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Inloggen</h1>
         <form method="POST" action="login.php">
             <label for="username">Gebruikersnaam *</label><br>
-            <input type="text" id="username" name="username" minlenght="4" maxlength="20"
-                placeholder="Voer uw gebruikersnaam in" required><br><br>
+            <input type="text" id="username" name="username" maxlength="20" placeholder="Voer uw gebruikersnaam in"
+                required><br><br>
 
             <label for="password">Wachtwoord *</label><br>
             <input type="password" id="password" name="password" minlength="8" placeholder="Voer uw wachtwoord in"
